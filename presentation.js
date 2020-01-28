@@ -19,14 +19,15 @@ choix : `;
             rl.close();
         }// attention, une fois l'interface fermée, la saisie n'est plus possible
         else {
-            start();
+            
             if (saisie === '1') {
                 console.log(`Vous avez saisi : >> Liste des clients `);
                 services.listerClients(function (err) { console.log("Erreur", err) }, function (data) {
                     // ici on a eu la réponse les données sont dans data
-                    data.forEach(function (unPost) { 
-                    console.log(unPost.id)})
+                    data.forEach(function (unClient) { 
+                    console.log(unClient.nom,unClient.prenoms)})
                 });
+                start();
             }
         }
     });

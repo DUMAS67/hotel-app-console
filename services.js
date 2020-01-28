@@ -7,7 +7,7 @@ var request = require('request');
 
 function listerClients(callBackEr,callbackFn) {
 
-    request('https://jsonplaceholder.typicode.com/posts', { json: true }, function (err, res, data) {
+    request('http://localhost:8080/clients', { json: true }, function (err, res, data) {
         // function (err,res,data) {..} déclanchée seulement quand réponse à la requete http 
         // mode asynchrone -> économie de ressources, de thread
         // 3
